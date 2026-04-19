@@ -1,0 +1,219 @@
+// Japanese web fonts
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap');
+
+// Font stack with Japanese system fonts as fallback
+$font-family-base: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans",
+  "Yu Gothic", "Meiryo", sans-serif;
+$font-family-mono: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+
+// Colors
+$brand-color: #2a7ae2;
+$text-color: #2c3e50;
+$grey: #828282;
+$border-color: #e8e8e8;
+$tag-bg: #e8f4fd;
+$tag-border: #aed6f1;
+$code-bg: #f6f8fa;
+
+body {
+  font-family: $font-family-base;
+  color: $text-color;
+  line-height: 1.8;
+  word-break: break-all;
+  overflow-wrap: break-word;
+}
+
+// Typography
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.4;
+  font-weight: 700;
+}
+
+p {
+  margin: 0 0 1.2em;
+}
+
+// Links
+a {
+  color: $brand-color;
+  &:hover { text-decoration: underline; }
+}
+
+// Code
+code {
+  font-family: $font-family-mono;
+  font-size: 0.875em;
+  background: $code-bg;
+  border: 1px solid $border-color;
+  border-radius: 3px;
+  padding: 0.1em 0.4em;
+}
+
+pre {
+  background: $code-bg;
+  border: 1px solid $border-color;
+  border-radius: 4px;
+  padding: 1em;
+  overflow-x: auto;
+
+  > code {
+    border: none;
+    padding: 0;
+    background: transparent;
+  }
+}
+
+// Tables
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5em 0;
+  font-size: 0.9em;
+
+  th, td {
+    border: 1px solid $border-color;
+    padding: 0.6em 0.8em;
+  }
+
+  th { background: #f0f0f0; font-weight: 700; }
+}
+
+// Post list on home page
+.post-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  > li {
+    margin-bottom: 2.5rem;
+    padding-bottom: 2.5rem;
+    border-bottom: 1px solid $border-color;
+
+    &:last-child { border-bottom: none; }
+  }
+
+  h3 {
+    margin: 0.25em 0;
+    font-size: 1.25rem;
+  }
+}
+
+.post-link {
+  color: $text-color;
+  font-weight: 700;
+  &:hover { color: $brand-color; text-decoration: none; }
+}
+
+.post-meta {
+  font-size: 0.85rem;
+  color: $grey;
+}
+
+.post-excerpt {
+  color: lighten($text-color, 20%);
+  font-size: 0.95rem;
+  margin-top: 0.4em;
+}
+
+// Tags
+.post-tags {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin: 0.5em 0 0;
+  padding: 0;
+
+  li a {
+    display: inline-block;
+    background: $tag-bg;
+    border: 1px solid $tag-border;
+    border-radius: 3px;
+    padding: 0.1em 0.5em;
+    font-size: 0.8rem;
+    color: darken($brand-color, 10%);
+    text-decoration: none;
+
+    &:hover {
+      background: $brand-color;
+      border-color: $brand-color;
+      color: white;
+    }
+  }
+}
+
+// Individual post
+.post-header {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid $border-color;
+}
+
+.post-title {
+  font-size: 1.75rem;
+  margin-top: 0;
+  line-height: 1.4;
+}
+
+.post-navigation {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 2.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid $border-color;
+  font-size: 0.875rem;
+
+  .nav-label {
+    display: block;
+    color: $grey;
+    margin-bottom: 0.2em;
+  }
+
+  .nav-next { text-align: right; }
+}
+
+// Tag / Category index pages
+.tag-section, .category-section {
+  margin-bottom: 2rem;
+
+  h2 {
+    padding-bottom: 0.3em;
+    border-bottom: 2px solid $brand-color;
+
+    small {
+      font-size: 0.65em;
+      color: $grey;
+      font-weight: 400;
+    }
+  }
+}
+
+.tag-post-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  li {
+    padding: 0.4em 0;
+    display: flex;
+    gap: 1em;
+    border-bottom: 1px dotted $border-color;
+
+    &:last-child { border-bottom: none; }
+  }
+
+  .post-date {
+    color: $grey;
+    font-size: 0.85rem;
+    white-space: nowrap;
+  }
+}
+
+// 404
+.not-found {
+  text-align: center;
+  padding: 4rem 0;
+
+  h1 { font-size: 6rem; color: #ccc; margin: 0; }
+}

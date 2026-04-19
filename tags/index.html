@@ -1,0 +1,21 @@
+---
+layout: page
+title: タグ一覧
+permalink: /tags/
+---
+
+{% assign sorted_tags = site.tags | sort %}
+{% for tag in sorted_tags %}
+  <div class="tag-section" id="{{ tag[0] | slugify }}">
+    <h2>{{ tag[0] }} <small>({{ tag[1].size }}件)</small></h2>
+    <ul class="tag-post-list">
+      {% assign sorted_posts = tag[1] | sort: "date" | reverse %}
+      {% for post in sorted_posts %}
+        <li>
+          <span class="post-date">{{ post.date | date: "%Y年%-m月%-d日" }}</span>
+          <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+{% endfor %}

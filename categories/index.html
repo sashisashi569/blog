@@ -1,0 +1,21 @@
+---
+layout: page
+title: カテゴリー一覧
+permalink: /categories/
+---
+
+{% assign sorted_categories = site.categories | sort %}
+{% for category in sorted_categories %}
+  <div class="category-section" id="{{ category[0] | slugify }}">
+    <h2>{{ category[0] }} <small>({{ category[1].size }}件)</small></h2>
+    <ul class="tag-post-list">
+      {% assign sorted_posts = category[1] | sort: "date" | reverse %}
+      {% for post in sorted_posts %}
+        <li>
+          <span class="post-date">{{ post.date | date: "%Y年%-m月%-d日" }}</span>
+          <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+{% endfor %}

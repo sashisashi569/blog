@@ -1,0 +1,49 @@
+title: "さしさしブログ"
+description: "日々の思いや技術的な発見を綴るブログです。"
+url: "https://sashisashi569.github.io"
+baseurl: "/blog"
+
+repository: sashisashi569/blog
+
+author:
+  name: "さしさし"
+
+lang: ja
+timezone: Asia/Tokyo
+
+theme: jekyll-theme-minimal
+
+permalink: /:year/:month/:day/:title/
+
+markdown: kramdown
+highlighter: rouge
+
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "page"
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - vendor/
+
+sass:
+  sass_dir: _sass
+  style: compressed

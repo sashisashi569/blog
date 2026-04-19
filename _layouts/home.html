@@ -1,0 +1,26 @@
+---
+layout: default
+---
+
+<div class="home">
+  {%- if site.posts.size == 0 -%}
+    <p>まだ記事がありません。</p>
+  {%- else -%}
+    <ul class="post-list">
+      {%- for post in site.posts -%}
+        <li>
+          {%- include post-meta.html post=post -%}
+          <h3>
+            <a class="post-link" href="{{ post.url | relative_url }}">
+              {{ post.title | escape }}
+            </a>
+          </h3>
+          {%- if post.excerpt -%}
+            <div class="post-excerpt">{{ post.excerpt | strip_html | truncatewords: 50 }}</div>
+          {%- endif -%}
+          {%- include tag-list.html post=post -%}
+        </li>
+      {%- endfor -%}
+    </ul>
+  {%- endif -%}
+</div>
