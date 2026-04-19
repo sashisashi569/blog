@@ -226,6 +226,42 @@ code, pre {
   font-family: $font-family-mono;
 }
 
+// Sidebar recent posts
+.sidebar-recent {
+  margin-top: 1.8em;
+
+  h3 {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #999;
+    margin: 0 0 0.6em;
+  }
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  li {
+    margin-bottom: 0.55em;
+    font-size: 12px;
+    line-height: 1.4;
+  }
+
+  time {
+    display: block;
+    color: #aaa;
+    font-size: 11px;
+  }
+
+  a {
+    color: #555;
+    &:hover { color: #267CB9; font-weight: normal; }
+  }
+}
+
 // Sidebar navigation
 .sidebar-nav {
   margin-top: 1.2em;
