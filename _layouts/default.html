@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: "ja" }}">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+{% seo %}
+    <link rel="stylesheet" href="{{ "/assets/css/style.css" | relative_url }}">
+    {% include head-custom.html %}
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1><a href="{{ "/" | relative_url }}">{{ site.title }}</a></h1>
+
+        {% if site.logo %}
+          <img src="{{ site.logo | relative_url }}" alt="Logo" />
+        {% endif %}
+
+        <p>{{ site.description }}</p>
+
+        <nav class="sidebar-nav">
+          <a href="{{ "/" | relative_url }}"{% if page.url == "/" %} class="active"{% endif %}>ホーム</a>
+          <a href="{{ "/about/" | relative_url }}"{% if page.url == "/about/" %} class="active"{% endif %}>About</a>
+          <a href="{{ "/tags/" | relative_url }}"{% if page.url == "/tags/" %} class="active"{% endif %}>タグ</a>
+          <a href="{{ "/categories/" | relative_url }}"{% if page.url == "/categories/" %} class="active"{% endif %}>カテゴリー</a>
+        </nav>
+      </header>
+      <section>
+
+      {{ content }}
+
+      </section>
+      <footer>
+        <p>&copy; {{ site.time | date: "%Y" }} {{ site.author.name }}</p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="{{ "/assets/js/scale.fix.js" | relative_url }}"></script>
+  </body>
+</html>

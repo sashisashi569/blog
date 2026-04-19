@@ -1,7 +1,4 @@
-// Japanese web fonts
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap');
-
-// Font stack with Japanese system fonts as fallback
+// Font stack with Japanese system fonts
 $font-family-base: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans",
   "Yu Gothic", "Meiryo", sans-serif;
 $font-family-mono: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
@@ -216,4 +213,30 @@ table {
   padding: 4rem 0;
 
   h1 { font-size: 6rem; color: #ccc; margin: 0; }
+}
+
+// Japanese font override
+body {
+  font-family: $font-family-base;
+  line-height: 1.8;
+  word-break: break-all;
+}
+
+code, pre {
+  font-family: $font-family-mono;
+}
+
+// Sidebar navigation
+.sidebar-nav {
+  margin-top: 1.2em;
+
+  a {
+    display: block;
+    color: #267CB9;
+    padding: 0.2em 0;
+    font-size: 13px;
+
+    &:hover { color: #069; font-weight: bold; }
+    &.active { font-weight: bold; color: #069; }
+  }
 }
