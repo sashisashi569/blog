@@ -1,12 +1,12 @@
-title: "さしさしブログ"
-description: "日々の思いや技術的な発見を綴るブログです。"
+title: "sashisashi's blog"
+description: "Twitterでは長すぎることを書いてます"
 url: "https://sashisashi569.github.io"
 baseurl: "/blog"
 
 repository: sashisashi569/blog
 
 author:
-  name: "さしさし"
+  name: "sashisashi569"
 
 lang: ja
 timezone: Asia/Tokyo
