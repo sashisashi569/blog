@@ -32,4 +32,4 @@ bundle exec jekyll serve --livereload
 | データベース | 不要 | 必要 |
 | 速度 | 高速 | サーバー依存 |
 
-Jekyll を使うと、記事はすべてファイルなので Git で管理できるのが嬉しいところです。
+GitHub Pagesではサーバーサイドの処理は基本できませんが、Blogみたいな静的サイトでは十分使えそうです。
