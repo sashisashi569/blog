@@ -17,4 +17,37 @@ NixOSでは他のディストロと違って、日本語(多分アジア圏の�
 - アンチエイリアスが既定で無効になっている
 - サブピクセルレンダリングが無効になっている
 
-このあたりが原因
+このあたりが原因と思われます。私自身、完全には解決していませんが現状はこのあたりの実装である程度誤魔化しています。
+[sashisashi569/nixconf/../fonts.nix](https://github.com/sashisashi569/nixconf/blob/main/modules/fonts.nix)
+```
+    fonts = {
+      fontDir.enable = true;
+
+      packages = with pkgs; [
+        dejavu_fonts
+        noto-fonts-cjk-sans
+        noto-fonts-cjk-serif
+      ];
+
+      fontconfig = {
+        allowBitmaps = false;
+        antialias    = true;
+
+        hinting = {
+          enable = true;
+          style  = "slight";
+        };
+
+        subpixel = {
+          rgba      = "rgb";
+          lcdfilter = "default";
+        };
+
+        defaultFonts = {
+          serif     = [ "Noto Serif CJK JP" "Noto Serif" ];
+          sansSerif = [ "Noto Sans CJK JP"  "Noto Sans"  ];
+          monospace = [ "DejaVu Sans Mono" "Noto Sans Mono CJK JP" ];
+```
+
+あと、これをやってもflatpakのfontconfigが自動更新されないので削除したり、パスを通してやる必要があります。ただ、一部アプリケーションではまだ直せていません。
+どうにか既定で直してもらいたいものです。
