@@ -18,7 +18,7 @@ NixOSでは他のディストロと違って、日本語(多分アジア圏の�
 - サブピクセルレンダリングが無効になっている
 
 このあたりが原因と思われます。私自身、完全には解決していませんが現状はこのあたりの実装である程度誤魔化しています。
-[sashisashi569/nixconf/../fonts.nix](https://github.com/sashisashi569/nixconf/blob/main/modules/fonts.nix)
+[nixconf modules/fonts.nix](https://github.com/sashisashi569/nixconf/blob/main/modules/fonts.nix)
 ```
     fonts = {
       fontDir.enable = true;
